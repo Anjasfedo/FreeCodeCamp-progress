@@ -1,0 +1,27 @@
+// Array.prototype.myMap = function(callback) {
+//   const newArray = [];
+//   // Only change code below this line
+//   const a = callback;
+//   for (let i = 0;i < this.length;i++) {
+//     // console.log(a(this[i]))
+//       newArray.push(a(this[i], i, this)) // 3 parameter
+//     // console.log(newArray[i])
+//   }
+//   console.log(newArray)
+//   // console.log(a(2))
+//   // Only change code above this line
+//   return newArray;
+// };
+
+// [1, 1, 2, 5, 2].myMap((element, index, array) => array[index + 1] || array[0])
+
+Array.prototype.myMap = function(callback) {
+  const newArray = [];
+  this.forEach((element, index, array) => {
+    newArray.push(callback(element, index, array)); // 3 parameter
+  });
+  console.log(newArray)
+  return newArray;
+};
+
+[1, 1, 2, 5, 2].myMap((element, index, array) => array[index + 1] || array[0])

@@ -1,0 +1,30 @@
+function Dog(name) {
+  this.name = name;
+}
+
+// Only change code below this line
+Dog.prototype = {
+  constructor: Dog,
+  numLegs: 4,
+  eat: function() {
+    console.log("nom nom nom");
+  },
+  describe: function() {
+    console.log("My name is " + this.name);
+  }
+};
+
+let tes = new Dog('abc')
+console.log(tes)
+console.log(tes.constructor === Dog); //
+console.log(tes.constructor === Object); //
+console.log(tes instanceof Dog); //
+
+// sebelum ditambah constructor: Dog, pada prototype
+// false
+// true
+// true
+// sesudah
+// true
+// false
+// true

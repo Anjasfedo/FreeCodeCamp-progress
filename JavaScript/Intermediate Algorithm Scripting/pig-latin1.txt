@@ -1,0 +1,23 @@
+function translatePigLatin(str) {
+  var beforeVowels = str.match(/[^aeiou]+/gi);
+
+
+  var wordsAfter = str.split(beforeVowels[0]);
+  var wordsAfterVowel = wordsAfter[1].trim().split(/\s+/);
+
+
+  var firstWordBeforeVowel = beforeVowels[0].trim();
+
+
+  var startsWithVowel = /^[aeiou]/i.test(str);
+if (startsWithVowel) {
+    console.log(str+"way");
+} else {
+    console.log(wordsAfterVowel+firstWordBeforeVowel+"ay");
+}
+
+  
+}
+
+translatePigLatin("paragrah");
+

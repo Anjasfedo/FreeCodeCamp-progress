@@ -1,0 +1,16 @@
+Array.prototype.myFilter = function(callback) {
+  const newArray = [];
+  // Only change code below this line
+    this.forEach((element, index, array) => {
+    // newArray.push(callback(element, index, array))
+    // console.log(element)
+    if((callback(element, index, array))) {
+      newArray.push(element)
+    }
+  });
+  console.log(newArray)
+  // Only change code above this line
+  return newArray;
+};
+
+["naomi", "quincy", "camperbot"].myFilter(element => element === "naomi")

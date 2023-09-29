@@ -1,0 +1,11 @@
+function whatIsInAName(collection, source) {
+
+const filtered = collection.filter((obj) => {
+  return Object.keys(source).every((prop) => {
+    return obj.hasOwnProperty(prop) && obj[prop] === source[prop];
+  });
+});
+return filtered;
+}
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });

@@ -1,0 +1,15 @@
+const arr = [2, 4, 5, 1, 7, 5, 2, 1];
+// Only change code below this line
+for (var i = 0; i < arr.length; i++) {
+  arr.splice(i, 2)
+}
+// Only change code above this line
+console.log(arr);
+
+//
+
+// let array = ['I', 'am', 'feeling', 'really', 'happy'];
+
+// let newArray = array.splice(3, 2); // newArray beriki array yang di splice, isi array berbeda
+// console.log(newArray) // [ 'really', 'happy' ]
+// console.log(array) // [ 'I', 'am', 'feeling' ]

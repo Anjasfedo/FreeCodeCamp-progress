@@ -1,0 +1,26 @@
+function addTogether() {
+
+  // mengecek jika seluruh argumen adalah number
+  const allArg = [...arguments].every(arg => typeof arg === 'number')
+
+  // jika tidak semua argumen number, kembalikan undefined
+  if (!allArg) {
+    return undefined;
+  }
+
+  // jika panjang argumen hanya 1, lakukan closure
+  if (arguments.length === 1) {
+    const one = arguments[0];
+    return function(two) {
+      if (typeof two === 'number') {
+        return one + two;
+      } else {
+        return undefined;
+      }
+    }
+  }
+
+  return arguments[0] + arguments[1];
+}
+
+addTogether(2,3);

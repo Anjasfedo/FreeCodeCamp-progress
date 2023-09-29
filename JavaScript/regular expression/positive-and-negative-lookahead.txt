@@ -1,0 +1,22 @@
+let sampleWord = "12345";
+let pwRegex = /(?=\w{6})(?=\D*\d{2})/; // greater than 5(?=\w{6}) characters long, and have two (?=\D*\d{2}) consecutive digits.
+let result = pwRegex.test(sampleWord);
+
+console.log(result)
+
+
+// A positive lookahead is used as (?=...) where the ... is the required part that is not matched.
+// A negative lookahead is used as (?!...) where the ... is the pattern that you do not want to be there. 
+
+// let quit = "qu";
+// let noquit = "qt";
+// let quRegex= /q(?=u)/; // harus u
+// let qRegex = /q(?!u)/; // selain u
+// console.log(quit.match(quRegex)) // [ 'q', index: 0, input: 'qu', groups: undefined ]
+// console.log(noquit.match(qRegex)) //[ 'q', index: 0, input: 'qt', groups: undefined ]
+
+// //
+
+// let password = "abc123";
+// let checkPass = /(?=\w{3,6})(?=\D*\d)/;
+// console.log(checkPass.test(password)); //true

@@ -1,0 +1,20 @@
+const addMessage = (message) => {
+  return {
+    type: 'ADD',
+    message: message
+  }
+};
+
+// Change code below this line
+
+// const store = Redux.createStore(
+//   (state = {}) => state
+// );
+
+// const mapStateToProps = (state) => ({
+//   items: state.message,
+// });
+
+const mapDispatchToProps = (dispatch) => ({
+  submitNewMessage: (message) => dispatch(addMessage(message)),
+});

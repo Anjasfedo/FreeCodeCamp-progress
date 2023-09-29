@@ -1,0 +1,7 @@
+const MyComponent = function() {
+  // Change code below this line
+  const JSX = <div>abc</div>;
+  return JSX;
+
+  // Change code above this line
+}

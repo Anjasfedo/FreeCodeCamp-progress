@@ -1,0 +1,38 @@
+const users = {
+  Alan: {
+    online: false
+  },
+  Jeff: {
+    online: true
+  },
+  Sarah: {
+    online: false
+  }
+}
+
+function countOnline(allUsers) {
+  // Only change code below this line
+  var count = 0;
+  for (var i in allUsers) {
+    console.log(allUsers[i].online);
+    if (allUsers[i].online == true) {
+      count++;
+    }
+  }
+  return count;
+  // Only change code above this line
+}
+
+console.log(countOnline(users));
+
+
+// const refrigerator = {
+//   'milk': 1,
+//   'eggs': 12,
+// };
+
+// for (const food in refrigerator) {
+//   console.log(food, refrigerator[food]);
+// }
+//milk 1
+// eggs 12

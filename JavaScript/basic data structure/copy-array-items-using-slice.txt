@@ -1,0 +1,16 @@
+function forecast(arr) {
+  // Only change code below this line
+var newArr = arr.slice(2, 4);
+  return newArr;
+}
+
+// Only change code above this line
+console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
+
+// 2 parameters — the first is the index at which to begin extraction, and the second is the index at which to stop extraction
+
+// let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];
+
+// let todaysWeather = weatherConditions.slice(1, 3); // index 1 - 3(tapi 3 tidak diambil), jadi hanya index 1 dan 2
+// console.log(weatherConditions); // [ 'rain', 'snow', 'sleet', 'hail', 'clear' ]
+// console.log(todaysWeather); // [ 'snow', 'sleet' ]

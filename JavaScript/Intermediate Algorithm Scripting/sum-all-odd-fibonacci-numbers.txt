@@ -1,0 +1,28 @@
+function sumFibs(num) {
+
+  // proses iteratif membuat fibonacchi
+  let jumlah = [0,1]
+  let satu = 1;
+  while (satu < num+1){
+    satu = jumlah[jumlah.length-1] + jumlah[jumlah.length-2]
+    if (satu < num+1) {
+      jumlah.push(satu);
+    }
+  }
+
+  // menjumlahkan bilangan yang ganjil
+  
+  let hasil = 0;
+
+  for (let i in jumlah){
+    if (jumlah[i] % 2 !== 0){
+      hasil += jumlah[i];
+    }
+  }
+
+  console.log(hasil)
+  return hasil;
+  
+}
+
+sumFibs(75025);

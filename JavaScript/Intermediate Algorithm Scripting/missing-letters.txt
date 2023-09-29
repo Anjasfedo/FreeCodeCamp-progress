@@ -1,0 +1,40 @@
+function fearNotLetter(str) {
+  let chart = [];
+  for (let i in str) {
+    chart.push(str.charCodeAt(i))
+  }
+
+  console.log(chart)
+
+  let bawah = chart[0];
+  // console.log(chart[0])
+  let atas = chart[chart.length - 1];
+  // console.log(chart[chart.length - 1])
+
+  let newChart = [];
+
+  for (let i = bawah; i <= atas; i++) {
+    newChart.push(i)
+  }
+
+  console.log(newChart)
+
+  var differentValues = [];
+
+  for (let i in chart) {
+    if (chart[i] !== newChart[i]) {
+      return String.fromCharCode(newChart[i]);
+    } 
+  }
+
+  console.log(differentValues)
+
+  console.log(String.fromCharCode(differentValues))
+  
+  // return String.fromCharCode(differentValues);
+}
+
+// fearNotLetter("abce");
+
+fearNotLetter("abcdefghjklmno")
+

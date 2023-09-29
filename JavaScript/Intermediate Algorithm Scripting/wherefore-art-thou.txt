@@ -1,0 +1,22 @@
+function whatIsInAName(collection, source) {
+//   for(let i in collection){
+//     console.log(collection[i].hasOwnProperty(Object.keys(source)))
+//   }
+//   console.log(Object.keys(source))
+
+//   for (const prop in source) {
+//   const value = source[prop];
+//   console.log(prop)
+//   console.log(value)
+// }
+
+const filteredProps = collection.filter((obj) => {
+  return Object.keys(source).every((prop) => {
+  return obj.hasOwnProperty(prop) && obj[prop] === source[prop] 
+  });
+});
+return filteredProps
+}
+
+whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 })
+

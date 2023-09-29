@@ -1,0 +1,20 @@
+function htmlColorNames(arr) {
+  // Only change code below this line
+const startIndex = 0;
+const amountToDelete = 2;
+
+arr.splice(startIndex, amountToDelete, "DarkSalmon", "BlanchedAlmond")
+  // Only change code above this line
+  return arr;
+}
+
+console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurquoise', 'FireBrick']));
+
+// splice() can take up to three parameters? Well, you can use the third parameter, comprised of one or more element(s), to add to the array. This can be incredibly useful for quickly switching out an element, or a set of elements, for another.
+
+// const numbers = [10, 11, 12, 12, 15];
+// const startIndex = 3;
+// const amountToDelete = 1;
+
+// numbers.splice(startIndex, amountToDelete, 13, 14); // parameter ke 3 untuk menambahkan data, ditempat dihapus
+// console.log(numbers);

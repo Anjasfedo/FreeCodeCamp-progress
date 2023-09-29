@@ -1,0 +1,25 @@
+function sumPrimes(num) {
+
+  // membuat bilangan prima dengam angka max num
+
+  var sieve = [], prima = [], i, j;
+  for(i = 2; i <= num; i++) {
+    if (!sieve[i]) {
+      prima.push(i)
+      for (j = i << 1; j <= num; j += i)
+      sieve[j] = true;
+    }
+  }
+
+  //menjumlahkan bilangan prima
+
+  let hasil = 0;
+  for (let i in prima) {
+    hasil += prima[i]
+  }
+
+  return hasil;
+
+}
+
+sumPrimes(10);

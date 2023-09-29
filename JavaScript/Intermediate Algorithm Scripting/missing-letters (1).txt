@@ -1,0 +1,28 @@
+function fearNotLetter(str) {
+  let chart = [];
+  for (let i in str) {
+    chart.push(str.charCodeAt(i))
+  }
+
+  let bawah = chart[0];
+  let atas = chart[chart.length - 1];
+
+  let newChart = [];
+
+  for (let i = bawah; i <= atas; i++) {
+    newChart.push(i)
+  }
+
+  var differentValues = [];
+
+  for (let i in chart) {
+    if (chart[i] !== newChart[i]) {
+      return String.fromCharCode(newChart[i]);
+    } 
+  }
+}
+
+// fearNotLetter("abce");
+
+fearNotLetter("abcdefghjklmno")
+

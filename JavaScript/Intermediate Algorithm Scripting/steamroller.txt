@@ -1,0 +1,31 @@
+function steamrollArray(arr) {
+  let result = [];
+  for (let i in arr) {
+    if (!Array.isArray(arr[i])){
+      result.push(arr[i])
+    } else {
+      for (let j in arr[i]){
+        if (!Array.isArray(arr[i][j])){
+          result.push(arr[i][j])
+        } else {
+          for (let k in arr[i][j]){
+            if (!Array.isArray(arr[i][j][k])){
+            result.push(arr[i][j][k])
+            } else {
+              for (let l in arr[i][j][k]){
+                if(!Array.isArray(arr[i][j][k][l])){
+                  result.push(arr[i][j][k][l])
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  return result
+
+}
+
+steamrollArray([1, [2], [3, [[4]]]]);

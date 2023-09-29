@@ -1,0 +1,22 @@
+function titleCase(str) {
+  var arr = str.split(" ")
+  var lowercase = arr.map(function(e){
+    return e.toLowerCase();
+  })
+  var capital = lowercase.map(function(e){
+    return e.charAt(0).toUpperCase() + e.slice(1);
+  })
+return capital.join(" ");
+}
+
+titleCase("I'm a little tea pot");
+
+//
+// function titleCase(str) {
+//   const newTitle = str.split(" ");
+//   const updatedTitle = [];
+//   for (let st in newTitle) {
+//     updatedTitle[st] = newTitle[st][0].toUpperCase() + newTitle[st].slice(1).toLowerCase();
+//   }
+//   return updatedTitle.join(" ");
+// }

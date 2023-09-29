@@ -1,0 +1,45 @@
+function palindrome(str) {
+  // buat array untuk mengecek hasil perbandingan
+  let result = [];
+  // simbol pada str dihapus, lalu dijadikan huruf kecil semua, dan displit untuk dijadikan array
+  let arr = str.replace(/[^\w]|_/gi, '').toLowerCase().split("");
+  // mendapatkan index tengah pada array str, untuk membaginya menjadi 2
+  const tengah = Math.ceil(arr.length / 2);
+
+  // jika array ganjil, array dibagi 2 dan nilai terakhir pada index array arr ditambahkan didepan array sec
+  if (arr.length % 2 === 1) {
+    const sec = arr.splice(tengah);
+    sec.unshift(arr[arr.length-1]);
+    sec.reverse();
+    // perulangan untuk mengecek tiap index apakah sama atau tidak, hasilnya akan dipush menuju array result
+    for (let i in arr) {
+      if (arr[i] === sec[i]) {
+        result.push(true)
+      } else {
+        result.push(false)
+      }
+    }
+  // jika bukan ganjil (genap), langsung dibagi 2
+  } else {
+    const sec = arr.splice(tengah);
+    sec.reverse();
+    // perulangan untuk mengecek tiap index apakah sama atau tidak, hasilnya akan dipush menuju array result
+    for (let i in arr) {
+      if (arr[i] === sec[i]) {
+        result.push(true)
+      } else {
+        result.push(false)
+      }
+    }
+  }
+  // jika pada array result tidak terdapat nilai false, akan mengembalikan true, dan sebaliknya.
+  if (result.indexOf(false)=== -1){
+    return true;
+  } else {
+    return false;
+  }
+
+  
+}
+
+palindrome("five|\_/|four")

@@ -1,0 +1,11 @@
+let favWord = "favorite";
+let favRegex = /favou?rite/; // ?. This checks for zero or one of the preceding element. 
+let result = favRegex.test(favWord);
+
+console.log(result)
+
+// let american = "color";
+// let british = "colour";
+// let rainbowRegex= /colou?r/; // u?, maka u dapat berisi atau tidak
+// rainbowRegex.test(american); // true
+// rainbowRegex.test(british); // true

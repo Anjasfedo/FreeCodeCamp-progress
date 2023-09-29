@@ -1,0 +1,24 @@
+function dropElements(arr, func) {
+  // mencari nilai pertama yang sama sesuai dengan function pada
+
+  let result;
+
+  for (let i in arr) {
+    if (func(arr[i])) {
+      result = arr[i]
+      break;
+    }
+  }
+  
+  // jika result undefined(falsy) return array kosong
+  
+  if (!result) {
+    return [];
+  }
+
+  // jika true kembalikan array setelah index yang dicari
+
+  return arr.slice(arr.indexOf(result))
+}
+
+dropElements([1, 2, 3, 4], function(n) {return n > 5;})

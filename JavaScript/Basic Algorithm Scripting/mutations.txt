@@ -1,0 +1,15 @@
+function mutation(arr) {
+  var text = arr[1].toLowerCase().split("")
+  var texts = arr[0].toLowerCase();
+  var result;
+  for (let i in text) {
+    if (texts.includes(text[i]) !== false) {
+      result = true;
+    } else {
+      return false
+    }
+  }
+  return result;
+}
+
+mutation(["hello", "hey"]);

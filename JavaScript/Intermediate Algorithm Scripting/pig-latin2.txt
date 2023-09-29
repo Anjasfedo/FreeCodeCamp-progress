@@ -1,0 +1,41 @@
+function translatePigLatin(str) {
+
+
+  
+}
+
+translatePigLatin("consonant");
+
+//
+
+var str = "california";
+var beforeVowels = str.match(/[^aeiou]+/gi);
+
+if (beforeVowels && beforeVowels.length > 0) {
+    var wordsAfter = str.split(beforeVowels[0]);
+    if (wordsAfter.length > 1) {
+        var wordsAfterVowel = wordsAfter[1].trim().split(/\s+/);
+        console.log(wordsAfterVowel);
+    } else {
+        console.log("No words found after the match.");
+    }
+} else {
+    console.log("No match found.");
+}
+
+
+if (beforeVowels && beforeVowels.length > 0) {
+    var firstWordBeforeVowel = beforeVowels[0].trim();
+    console.log(firstWordBeforeVowel);
+} else {
+    console.log("No word found before a vowel.");
+}
+
+var kalimat = "california";
+var startsWithVowel = /^[aeiou]/i.test(kalimat);
+
+if (startsWithVowel) {
+    console.log(wordsAfterVowel+firstWordBeforeVowel+"way");
+} else {
+    console.log(wordsAfterVowel+firstWordBeforeVowel+"ay");
+}

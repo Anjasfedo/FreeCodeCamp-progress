@@ -1,0 +1,25 @@
+function frankenSplice(arr1, arr2, n) {
+  var newarr;
+  newarr = arr2.slice(0, n);
+  var newarr2;
+  newarr2 = arr2.slice(n);
+  return [...newarr, ...arr1, ...newarr2]
+}
+
+frankenSplice([1, 2, 3], [4, 5, 6], 2);
+
+// use splice
+  // var newarr = arr2.splice(0, n)
+  // console.log(newarr)
+  // console.log(arr1)
+  // console.log(arr2)
+  // var result = [...newarr, ...arr1, ...arr2]
+  // console.log(result)
+
+// true code
+// function frankenSplice(arr1, arr2, n) {
+//   // It's alive. It's alive!
+//   let localArr = arr2.slice();
+//   localArr.splice(n, 0, ...arr1);
+//   return localArr;
+// }

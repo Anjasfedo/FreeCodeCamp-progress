@@ -1,0 +1,39 @@
+function truthCheck(collection, pre) {
+  let result = [];
+
+  // iterasi untuk mengecek isi array
+  for (let i in collection) {
+
+    // iterasi untuk mengecek isi object dalam array
+      for (let prop in collection[i]) {
+
+        // jika object memiliki property
+        if (collection[i].hasOwnProperty(prop)) {
+
+          // jika property sama dengan pre, dan value pada property tersebut falsy, push false ke result
+          if (prop === pre && !collection[i][prop]) {
+            result.push(false)
+          } 
+          
+          // sebaliknya, jika property sama dengan pre, dan value pada property tersebut truth, push true ke result
+          else if (prop === pre && collection[i][prop]) {
+            result.push(true)
+          } 
+          
+          // kemudian jika object memiliki panjang hanya 1, push false ke result
+          else if (Object.keys(collection[i]).length === 1){
+            result.push(false)
+          }
+        }
+      }
+  }
+
+  // jika terdapat false pada result, mengembalikan false
+  if (result.indexOf(false)>=0) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot")

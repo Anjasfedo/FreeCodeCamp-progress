@@ -1,0 +1,58 @@
+function telephoneCheck(str) {
+  let arr = str.replace(/\s/g, '').split('');
+
+  // console.log(arr)
+
+  let kode = [];
+
+  for (let i in arr) {
+    kode.push(arr[i].charCodeAt())
+  }
+
+  console.log(kode)
+
+  let result = [];
+  
+  if (arr.length >= 10 && arr.length <= 14) {
+    
+    
+
+    for (let i in kode) {
+      if (kode[i] >= 48 && kode[i] <= 57) {
+        result.push(true)
+      } else {
+        result.push(false)
+      }
+    }
+
+    if (kode[3] === 45 && kode [7] === 45) {
+      return true;
+    } else if (kode[4] === 45 && kode[8] === 45) {
+      return true;
+    } else if (kode[1] === 40 && kode[5] === 41 && kode[9] === 45) {
+      if (kode[0] === 49) {
+        return true;
+      } else {
+        return false;
+      }
+    } else if (kode[0] === 40 && kode[4] === 41) {
+      return true;
+    }
+    
+  } else {
+    return false;
+  }
+
+  console.log(result)
+  if (result.indexOf(false) >= 0) {
+    return false;
+  } else {
+    return true
+  }
+  
+
+
+
+}
+
+telephoneCheck("(275)76227382")

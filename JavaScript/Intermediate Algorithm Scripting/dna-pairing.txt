@@ -1,0 +1,22 @@
+function pairElement(str) {
+  
+  let newstr = [];
+  for (let i in str) {
+   if (str[i] == "G"){
+     newstr.push(str[i]+'C')
+   } else if (str[i] == "C"){
+     newstr.push(str[i]+'G')
+   } else if (str[i] == "A"){
+     newstr.push(str[i]+'T')
+   } else if (str[i] == "T"){
+     newstr.push(str[i]+'A')
+   }
+  }
+
+  var result = newstr.map(item => item.split(""));
+
+  console.log(result)
+  return result;
+}
+
+pairElement("GCG");

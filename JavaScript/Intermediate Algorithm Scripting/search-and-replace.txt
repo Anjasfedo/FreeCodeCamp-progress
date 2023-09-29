@@ -1,0 +1,17 @@
+function myReplace(str, before, after) {
+  let index = str.indexOf(before)
+
+  let newafter;
+  if (str[index] == str[index].toLowerCase()) {
+    newafter = after.charAt(0).toLowerCase() + after.slice(1);
+  } else {
+    newafter = after.charAt(0).toUpperCase() + after.slice(1);
+  }
+
+  return str.replace(before, newafter);
+
+}
+
+// myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "Leaped");

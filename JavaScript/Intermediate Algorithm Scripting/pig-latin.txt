@@ -1,0 +1,27 @@
+function translatePigLatin(str) {
+
+var firstVowelMatch = str.match(/[aeiou]/i);
+
+if (firstVowelMatch) {
+    var startIndex = firstVowelMatch.index;
+    var wordBeforeVowel = str.substring(0, startIndex).trim();
+    var restOfSentence = str.substring(startIndex).trim();
+    var newSentence = restOfSentence + "" + wordBeforeVowel;
+    console.log(newSentence);
+} else {
+  return(str+"ay")
+}
+
+
+var startsWithVowel = /^[aeiou]/i.test(str);
+if (startsWithVowel) {
+    return(str+"way");
+} else {
+    return(newSentence+"ay");
+}
+
+}
+
+
+translatePigLatin("rhythm");
+

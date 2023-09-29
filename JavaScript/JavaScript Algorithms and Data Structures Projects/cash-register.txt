@@ -1,0 +1,109 @@
+function checkCashRegister(price, cash, cid) {
+
+// inisiasi variabel
+  let harga = price * 100;
+
+  let uwang = cash * 100;
+
+  let kem = (uwang-harga);
+
+  let change = [["PENNY", 0], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]
+
+  let newArr = [];
+
+  let result = {};
+  
+  let sumCid = 0
+
+  // sumCid berisi jumlah uang pada kasir
+  for (let i in cid) {
+    sumCid += cid[i][1]
+  }
+
+  
+  // jika kembalian lebih dari 0
+  if (kem > 0) {
+    // selama kembalian lebih dari 0
+    while (kem > 0) {
+      if (kem > 10000 && cid[8][1] > 0) {
+        change[8][1] += 100;// menambahkan 100 ke variabel change
+        kem -= 10000; // mengurangi nilai kem sebagai parameter selama while berjalan
+        cid[8][1] -= 100; // mengurangi 100 pada cid
+        // jadi change ditambah, cid dikurang, dan kem sebagai parameter while
+      } else if (kem > 2000 && cid[7][1] > 0) {
+        change[7][1] += 20
+        kem -= 2000;
+        cid[7][1] -= 20
+      } else if (kem >= 1000 && cid[6][1]) {
+        change[6][1] += 10
+        kem -= 1000;
+        cid[6][1] -= 10
+      } else if (kem >= 500 && cid[5][1] > 0) {
+        change[5][1] += 5
+        kem -= 500
+        cid[5][1] -= 5
+      } else if (kem >= 100 && cid[4][1] > 0) {
+        change[4][1] += 1
+        kem -= 100;
+        cid[4][1] -= 1
+      } else if (kem >= 25 && cid[3][1] > 0) {
+        change[3][1] += 0.25
+        kem -= 25
+        cid[3][1] -= 0.25
+      } else if (kem >= 10 && cid[2][1] > 0) {
+        change[2][1] += 0.1
+        kem -= 10
+        cid[2][1] -= 0.1
+      } else if (kem >= 5 && cid[1][1] > 0) {
+        change[1][1] += 0.05
+        kem -= 5
+        cid[1][1] -= 0.05
+      } else if (kem >= 1 && cid[0][1] > 0) {
+        change[0][1] += 0.01
+        kem -= 1;
+        cid[0][1] -= 0.01
+      } else {
+        // jika kem falsy, while diberhentikan dan mengembalikan
+        kem = 0
+        return {status: "INSUFFICIENT_FUNDS", change: []}
+      }
+    }
+  }
+
+
+  // mengisi newArr dengan change
+  for (let i in change) {
+    if (change[i][1] > 0) {
+      newArr.push(change[i])
+    }
+    
+  }
+  // mengisi change dengan bilangan yang sudah difixed
+  for (let i in change) {
+    if (change[i][1] < 0.1) {
+      let num = change[i][1]
+      let bulat = (parseFloat(num.toFixed(2)))
+      change[i][1] = bulat
+    } else {
+      let num = change[i][1]
+      let bulat = (parseFloat(num.toFixed(1)))
+      change[i][1] = bulat
+    }
+  }
+
+
+  // jika pemasukan(cash-price) sama dengan jumlah uang dikasir(cid), maka kembalikan
+  if (cash-price === sumCid) {
+    result['status'] = "CLOSED";
+    result['change'] = change;
+    return result
+  } else if (kem < (sumCid*100)) {
+    // dan jika kembalian kurang dari jumlah uang dikasir, maka kembalikan
+    result['status'] = "OPEN";
+    result['change'] = newArr.reverse();
+    return result
+  }  
+  
+}
+
+console.log(checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]))

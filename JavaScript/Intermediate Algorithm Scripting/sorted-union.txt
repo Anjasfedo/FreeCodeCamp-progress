@@ -1,0 +1,19 @@
+function uniteUnique(arr) {
+  let kombinasi = []
+  for (let i in arguments){
+    kombinasi = kombinasi.concat(arguments[i])
+  }
+
+  let unik = [];
+
+  for (let i in kombinasi) {
+    if (unik.indexOf(kombinasi[i]) === -1) {
+      unik.push(kombinasi[i])
+    }
+  }
+
+  return unik;
+
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);

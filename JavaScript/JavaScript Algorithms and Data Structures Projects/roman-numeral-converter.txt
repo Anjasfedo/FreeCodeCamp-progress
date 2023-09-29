@@ -1,0 +1,52 @@
+function convertToRoman(num) {
+  let result = [];
+  let bil = num;
+  if (bil > 0 && bil < 5000){
+    while (bil > 0){
+      if (bil >= 1000){
+        result.push('M');
+        bil -= 1000;
+      } else if (bil >= 900){
+        result.push('CM');
+        bil -= 900
+      } else if (bil >= 500){
+        result.push('D');
+        bil -= 500
+      } else if (bil >= 400){
+        result.push('CD');
+        bil -= 400
+      } else if (bil >= 100){
+        result.push('C');
+        bil -= 100
+      } else if (bil >= 90){
+        result.push('XC');
+        bil -= 90
+      } else if (bil >= 50){
+        result.push('L');
+        bil -= 50
+      } else if (bil >= 40){
+        result.push('XL');
+        bil -= 40
+      } else if (bil >= 10){
+        result.push('X');
+        bil -= 10
+      } else if (bil >= 9){
+        result.push('IX');
+        bil -= 9
+      } else if (bil >= 5){
+        result.push('V');
+        bil -= 5
+      } else if (bil >= 4){
+        result.push('IV');
+        bil -= 4
+      } else if (bil >= 1){
+        result.push('I');
+        bil -= 1
+      }
+      }
+ }
+
+ return result.join('');
+}
+
+convertToRoman(83);

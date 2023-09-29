@@ -1,0 +1,5 @@
+function spinalCase(str) {
+  return (str.split(/(?=[A-Z])/).join("-").toLowerCase().replace(/\s-/g, "-").replace(/[\s-]/g, "-").replace(/_/g, ""))
+}
+
+console.log(spinalCase('The_Andy_Griffith_Show'))

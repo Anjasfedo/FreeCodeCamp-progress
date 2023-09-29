@@ -1,0 +1,46 @@
+function smallestCommons(arr) {
+
+  // membuat array berdasarkan argumen
+
+  let array = [];
+
+  if (arr[0] < arr [1]) {
+    for (let i = arr[0]; i <= arr[1]; i++) {
+    array.push(i)
+    } 
+    } else {
+    for (let i = arr[1]; i <= arr[0]; i++) {
+    array.push(i)
+    } 
+    }
+  
+  console.log(array)
+
+  // fungsi pembagi persekutu besar
+
+  function gcd(a, b) {
+    while(b !== 0) {
+      const temp = b;
+      b = a % b;
+      a = temp;
+    }
+    return a
+  }
+
+  // fungsi kelipatan bilangan kecil
+
+  function lcm(a, b) {
+    return a * b / gcd(a, b)
+  }
+
+  // mencari kpk setiap angka pada array
+
+  let result = array[0];
+  for (let i = 1; i < array.length; i++) {
+    result = lcm(result, array[i]);
+  }
+ 
+  return result;
+}
+
+smallestCommons([5,1]);

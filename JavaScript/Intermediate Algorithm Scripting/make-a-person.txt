@@ -1,0 +1,42 @@
+const Person = 
+  function(first, last) {
+
+    const data = {
+    valueA: first,
+    valueB: last
+  };
+
+    this.getFullName = function() {
+      return `${data.valueA} ${data.valueB}`;
+    };
+
+    this.getFirstName = function() {
+      return `${data.valueA}`;
+    };
+
+    this.getLastName = function() {
+      return `${data.valueB}`;
+    };
+
+    this.setFullName = function(newValA, newValB) {
+      data.valueA = newValA;
+      data.valueB = newValB;
+    };
+
+    this.setFirstName = function(newValA) {
+      data.valueA = newValA;
+    };
+
+    this.setLastName = function(newValB) {
+      data.valueB = newValB;
+    };
+   
+  };
+
+const obj = new Person('Bob', 'Ross')
+
+obj.setFirstName('Haskell')
+
+console.log(obj.getFullName())
+
+console.log(Object.keys(Person).length)

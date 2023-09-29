@@ -1,0 +1,78 @@
+function telephoneCheck(str) {
+  let arr = str.replace(/\s/g, '').split('');
+
+  // console.log(arr)
+
+    let kode = [];
+
+  for (let i in arr) {
+    kode.push(arr[i].charCodeAt())
+  }
+
+  let sumNum = 0;
+
+  let kurung = [];
+
+  let sumCode = [];
+
+  let garis = [];
+
+  for (let i in kode) {
+    if (kode[i]>=48 && kode[i]<=57) {
+      sumNum++
+    }
+
+    if (kode[i]===40 || kode[i]===41){
+      kurung.push(true)
+    }
+
+    if ((kode[i] >= 48 && kode[i] <= 57) || kode[i] === 40 || kode[i] === 41 || kode[i] === 45) {
+      sumCode.push(true)
+  } else {
+    sumCode.push(false)
+  }
+
+  if (kode[i] === 45) {
+    garis.push(true)
+  }
+
+    
+  }
+
+  // console.log(sumCode)
+  // console.log(kurung)
+
+  // console.log(garis)
+
+  if (garis.length <=2) {
+    if (sumNum === 10 || sumNum === 11){
+
+    if (sumCode.indexOf(false) === -1) {
+      if ((kurung.length >= 2 && (kode[0] === 40 && kode[1] === 53)) || (kurung.length >= 2 && (kode[0] === 49)) || kurung.length == 0) {
+      if (kode[0] === 53 || kode[0] === 49 || kode[0] === 40) {
+        return true
+      } else {
+        return false
+      }
+    } else {
+      return false
+    }
+    } else {
+      return false
+    }
+
+    
+
+
+  } else {
+    return false
+  }
+  } else {
+    return false
+  }
+  
+
+  
+}
+
+telephoneCheck("(555)5(55?)-5555") 

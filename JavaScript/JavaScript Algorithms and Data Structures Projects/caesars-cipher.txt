@@ -1,0 +1,37 @@
+function rot13(str) {
+  const arr = str.split('');
+
+  let kode = [];
+
+  let result = [];
+
+  let hasil = [];
+
+  for (let i in arr){
+    kode.push(str.charCodeAt(i))
+  }
+
+  
+
+  for (let i in kode) {
+    if (kode[i] >= 65 && kode[i] <= 90) {
+      if (kode[i] + 13 > 90) {
+        result.push(kode[i] - 90 + 77)
+      } else {
+        result.push(kode[i] + 13)
+      }
+    } else {
+      result.push(kode[i])
+    }
+  }
+
+  
+  for (let i in result) {
+    hasil.push(String.fromCharCode(result[i]))
+  }
+
+  return hasil.join('');
+
+}
+
+rot13("SERR PBQR PNZC");

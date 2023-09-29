@@ -1,0 +1,13 @@
+let ohStr = "Ohhh no";
+let ohRegex = /^Oh{3,6} no$/; // Change this line
+let result = ohRegex.test(ohStr);
+
+console.log(result); //true
+
+// let A4 = "aaaah";
+// let A2 = "aah";
+// let multipleA = /a{2,4}h/;
+// multipleA.test(A4);
+// multipleA.test(A2);
+
+// console.log(multipleA.test(A4)) //true
